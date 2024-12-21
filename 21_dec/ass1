@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<string.h>
+int scoreOfString(char* s) {
+    int l,i,sum=0;
+    l=strlen(s);
+    for(i=0;i<l-1;i++){
+            if(s[i+1]-s[i]>=0)
+            sum=sum+(s[i+1]-s[i]);
+            else
+            sum=sum-(s[i+1]-s[i]);
+        
+    }
+    printf("sum is %d",sum);
+    return sum;
+}
+int main(){
+char* s="hello";
+scoreOfString(s);
+return 0;
+}
