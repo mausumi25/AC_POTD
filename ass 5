@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<stdlib.h>
+int* smallerNumbersThanCurrent(int* nums, int numsSize, int* returnSize) {
+    int i,j;
+    int* final = (int*)malloc(numsSize * sizeof(int));
+    *returnSize = numsSize;
+    for(i=0;i<numsSize;i++){
+        int count=0;
+        for(j=0;j<numsSize;j++){
+            if(nums[j]<nums[i])
+               count++;
+        }
+        final[i]=count;
+    }
+    return final;
+}
+int main(){
+    int arr[]={8,1,2,2,3};
+    int *nums=arr;
+    int numsSize=5;
+    int returnSize=numsSize;
+    int* ans=smallerNumbersThanCurrent(nums,numsSize,&returnSize);
+    for(int i=0;i<numsSize;i++){
+        printf("%d ",ans[i]);
+    }
+}
